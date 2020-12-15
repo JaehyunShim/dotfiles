@@ -5,12 +5,17 @@
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt-get update
-sudo apt-get install -y ros-$ROS_DISTRO-desktop-full
-source /opt/ros/$ROS_DISTRO/setup.bash
-sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+
+if [ 'lsb_release -cs' == focal ]; then
+  sudo apt-get install -y ros-noetic-desktop-full
+  source /opt/ros/noetic/setup.bash
+  sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+  #sudo apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+fi
+
 sudo rosdep init
 rosdep update
 
 mkdir -p $HOME/catkin_ws/src
-cd $HOME/$name_catkin_workspace
+cd $HOME/catkin_ws
 catkin_make

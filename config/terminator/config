@@ -1,0 +1,36 @@
+[global_config]
+[keybindings]
+  new_tab = <Primary>t
+  go_up = <Primary>Up
+  go_down = <Primary>Down
+  go_left = <Primary>Left
+  go_right = <Primary>Right
+  split_horiz = <Primary><Shift>l
+  split_vert = <Primary><Shift>k
+  close_term = <Primary>w
+  close_window = <Primary>q
+  switch_to_tab_1 = <Primary>1
+  switch_to_tab_2 = <Primary>2
+  switch_to_tab_3 = <Primary>3
+  switch_to_tab_4 = <Primary>4
+  switch_to_tab_5 = <Primary>5
+  switch_to_tab_6 = <Primary>6
+  switch_to_tab_7 = <Primary>7
+  switch_to_tab_8 = <Primary>8
+  switch_to_tab_9 = <Primary>9
+  switch_to_tab_10 = <Primary>0
+  hide_window = F12
+  new_window = <Primary>n
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

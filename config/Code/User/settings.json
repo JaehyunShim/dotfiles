@@ -1,0 +1,9 @@
+{
+  "editor.tabSize": 2,
+  "editor.rulers": [100],
+  "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
+  "editor.renderWhitespace": "all",
+  "terminal.integrated.scrollback": 100000,
+  "files.insertFinalNewline": true
+}

@@ -1,0 +1,7 @@
+[user]
+        name = JaehyunShim
+        email = jhshim@robotis.com
+[push]
+        default = simple
+[color]
+        ui = true
