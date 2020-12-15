@@ -1,0 +1,71 @@
+#!/bin/bash
+# MIT License
+# Copyright (c) 2020 Jaehyun Shim
+
+# Common commands
+alias gb='gedit ~/.bashrc'
+alias nb='nano ~/.bashrc'
+alias sb='source ~/.bashrc'
+alias gs='git status'
+alias gp='find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull'
+alias nt='nautilus .'
+
+# ROS version
+ROS_VERSION=1
+
+# ROS1 commands
+if [ ${ROS_VERSION} -eq 1 ]; then
+  alias cw='cd ~/catkin_ws'
+  alias cs='cd ~/catkin_ws/src'
+  alias cm='cd ~/catkin_ws && catkin_make && rospack profile && source ~/.bashrc'
+  alias ct='cd ~/catkin_ws && catkin_make run_tests roslint && rospack profile && source ~/.bashrc'
+  alias ci='cd ~/catkin_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro noetic -y'
+  alias cr='cd ~/catkin_ws && rm -rf build devel'
+  alias pe="env | grep ROS"
+  alias ka='killall -9'
+  alias kg='killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient'
+  source /opt/ros/noetic/setup.bash
+  source ~/catkin_ws/devel/setup.bash
+  export ROS_MASTER_URI=http://localhost:11311
+  export ROS_HOSTNAME=localhost
+  export TURTLEBOT3_MODEL=burger
+  alias tb3='ssh ubuntu@0.0.0.0'
+
+# ROS2 commands
+elif [ ${ROS_VERSION} -eq 2 ]; then
+  alias cw='cd ~/colcon_ws'
+  alias cs='cd ~/colcon_ws/src'
+  alias cb='cd ~/colcon_ws && colcon build --symlink-install && source ~/.bashrc'
+  alias ci='cd ~/colcon_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro foxy -y'
+  alias cr='cd ~/colcon_ws && rm -rf build install log'
+  alias pe="env | grep ROS"
+  alias ac='ament_cpplint'
+  alias af='ament_flake8'
+  alias ka='killall -9'
+  alias kg='killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient'
+  alias rt='ros2 topic list'
+  alias rn='ros2 node list'
+  source /opt/ros/foxy/setup.bash
+  source ~/colcon_ws/install/local_setup.bash
+
+  # ROS2 Domain ID
+  export ROS_DOMAIN_ID=1 # Default
+  #export ROS_DOMAIN_ID=2 # Developer
+  #export ROS_DOMAIN_ID=3 # Developer
+  #export ROS_DOMAIN_ID=30 # TurtleBot3
+  #export TURTLEBOT3_MODEL=burger
+  alias tb3='ssh ubuntu@0.0.0.0'
+
+  # Set rmw implementation
+  export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+  #export RMW_IMPLEMENTATION=rmw_connext_cpp
+  #export RMW_IMPLEMENTATION=rmw_opensplice_cpp
+  #export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+
+  # Set the alias commands for test
+  alias testpub='ros2 run demo_nodes_cpp talker'
+  alias testsub='ros2 run demo_nodes_cpp listener'
+  alias testpubimg='ros2 run image_tools cam2image'
+  alias testsubimg='ros2 run image_tools showimage'
+
+fi

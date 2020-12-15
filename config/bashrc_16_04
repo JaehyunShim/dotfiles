@@ -1,0 +1,28 @@
+#!/bin/bash
+# MIT License
+# Copyright (c) 2020 Jaehyun Shim
+
+# Common commands
+alias gb='gedit ~/.bashrc'
+alias nb='nano ~/.bashrc'
+alias sb='source ~/.bashrc'
+alias gs='git status'
+alias gp='find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull'
+alias nt='nautilus .'
+
+# ROS1 commands
+alias cw='cd ~/catkin_ws'
+alias cs='cd ~/catkin_ws/src'
+alias cm='cd ~/catkin_ws && catkin_make && rospack profile && source ~/.bashrc'
+alias ct='cd ~/catkin_ws && catkin_make run_tests roslint && rospack profile && source ~/.bashrc'
+alias ci='cd ~/catkin_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro kinetic -y'
+alias cr='cd ~/catkin_ws && rm -rf build devel'
+alias pe='env | grep ROS'
+alias ka='killall -9'
+alias kg='killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient'
+source /opt/ros/kinetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_HOSTNAME=localhost
+export TURTLEBOT3_MODEL=burger
+alias tb3='ssh ubuntu@0.0.0.0'
