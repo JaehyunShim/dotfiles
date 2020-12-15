@@ -10,11 +10,11 @@ bash ./install/install_terminator.sh
 bash ./install/install_vscode.sh
 bash ./install/install_docker.sh
 
-ln -p config/autostart/barrier.desktop ~/.config/autostart/barrier.desktop
-ln -p config/autostart/vino-server.desktop ~/.config/autostart/vino-server.desktop
-ln -p config/Code/User/settings.json ~/.config/Code/User/settings.json
-ln -p config/terminator/config ~/.config/terminator/config
-ln -p config/git/gitconfig ~/.gitconfig
+cp -p config/autostart/barrier.desktop ~/.config/autostart/barrier.desktop
+cp -p config/autostart/vino-server.desktop ~/.config/autostart/vino-server.desktop
+cp -p config/Code/User/settings.json ~/.config/Code/User/settings.json
+cp -p config/terminator/config ~/.config/terminator/config
+cp -p config/git/gitconfig ~/.gitconfig
 
 if [ `lsb_release -cs` == xenial ]; then
   cat config/bash/bashrc16.04 >> ~/.bashrc
