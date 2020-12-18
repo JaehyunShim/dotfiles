@@ -7,7 +7,7 @@ sudo apt-get -y install openssh-server
 
 # Samba
 sudo apt-get -y install -y samba
-echo 'password' | sudo -S smbpasswd -n username
+echo 'password' | sudo -S smbpasswd -n $USER
 sudo bash -c 'cat config/samba/smb.conf >> /etc/samba/smb.conf'
 echo 'password' | sudo -S service smbd restart
 
