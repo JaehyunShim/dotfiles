@@ -6,10 +6,10 @@
 sudo apt-get install openssh-server
 
 # Samba
-$ sudo apt-get install -y samba
-$ echo 'password' | sudo -S smbpasswd -n username
-$ sudo bash -c 'cat config/samba/smb.conf >> /etc/samba/smb.conf'
-$ echo 'password' | sudo -S service smbd restart
+sudo apt-get install -y samba
+echo 'password' | sudo -S smbpasswd -n username
+sudo bash -c 'cat config/samba/smb.conf >> /etc/samba/smb.conf'
+echo 'password' | sudo -S service smbd restart
 
 # Vino
 sudo apt install vino

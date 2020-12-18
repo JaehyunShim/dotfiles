@@ -2,14 +2,14 @@
 # MIT License
 # Copyright (c) 2020 Jaehyun Shim
 
-sudo apt update && sudo apt install locales
+sudo apt-get -y update && sudo apt-get -y install locales
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 sudo apt update && sudo apt install -y curl gnupg2 lsb-release
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 sudo sh -c 'echo "deb http://packages.ros.org/ros2/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
-sudo apt update
+sudo apt-get -y update
 
 if [ `lsb_release -cs` == focal ]; then
   sudo apt install -y ros-foxy-desktop
