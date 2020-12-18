@@ -3,4 +3,4 @@
 # Copyright (c) 2020 Jaehyun Shim
 
 # Barrier
-sudo apt install barrier
+sudo apt-get -y install barrier
