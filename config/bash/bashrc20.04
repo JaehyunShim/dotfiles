@@ -19,7 +19,7 @@ if [ ${ROS_VERSION} -eq 1 ]; then
   alias cs='cd ~/catkin_ws/src'
   alias cm='cd ~/catkin_ws && catkin_make && rospack profile && source ~/.bashrc'
   alias ct='cd ~/catkin_ws && catkin_make run_tests roslint && rospack profile && source ~/.bashrc'
-  alias ci='cd ~/catkin_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro noetic -y'
+  alias ci='cd ~/catkin_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro noetic -r -y'
   alias cr='cd ~/catkin_ws && rm -rf build devel'
   alias pe="env | grep ROS"
   alias ka='killall -9'
@@ -36,7 +36,7 @@ elif [ ${ROS_VERSION} -eq 2 ]; then
   alias cw='cd ~/colcon_ws'
   alias cs='cd ~/colcon_ws/src'
   alias cb='cd ~/colcon_ws && colcon build --symlink-install && source ~/.bashrc'
-  alias ci='cd ~/colcon_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro foxy -y'
+  alias ci='cd ~/colcon_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro foxy -r -y'
   alias cr='cd ~/colcon_ws && rm -rf build install log'
   alias pe="env | grep ROS"
   alias ac='ament_cpplint'
