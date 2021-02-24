@@ -1,7 +1,8 @@
 #!/bin/bash
 # MIT License
-# Copyright (c) 2020 Jaehyun Shim
+# Copyright (c) 2021 Jaehyun Shim
 
+# Install
 bash ./install/install_base.sh
 bash ./install/install_ros.sh
 bash ./install/install_ros2.sh
@@ -9,10 +10,10 @@ bash ./install/install_chrome.sh
 bash ./install/install_terminator.sh
 bash ./install/install_vscode.sh
 bash ./install/install_docker.sh
-
 bash ./install/install_client_pc.sh
 bash ./install/install_server_pc.sh
 
+# Configure
 cp -r config/autostart ~/.config/autostart
 cp config/Code/User/settings.json ~/.config/Code/User/settings.json
 cp -r config/terminator ~/.config/terminator

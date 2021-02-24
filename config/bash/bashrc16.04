@@ -1,6 +1,6 @@
 #!/bin/bash
 # MIT License
-# Copyright (c) 2020 Jaehyun Shim
+# Copyright (c) 2021 Jaehyun Shim
 
 # Common commands
 alias gb='gedit ~/.bashrc'
@@ -13,8 +13,8 @@ alias nt='nautilus .'
 # ROS1 commands
 alias cw='cd ~/catkin_ws'
 alias cs='cd ~/catkin_ws/src'
-alias cm='cd ~/catkin_ws && catkin_make && rospack profile && source ~/.bashrc'
-alias ct='cd ~/catkin_ws && catkin_make run_tests roslint && rospack profile && source ~/.bashrc'
+alias cm='cd ~/catkin_ws && catkin_make && rospack profile && source ~/catkin_make/devel/setup.bash'
+alias ct='cd ~/catkin_ws && catkin_make run_tests roslint && rospack profile && source ~/catkin_make/devel/setup.bash'
 alias ci='cd ~/catkin_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro kinetic -r -y'
 alias cr='cd ~/catkin_ws && rm -rf build devel'
 alias pe='env | grep ROS'

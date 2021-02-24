@@ -1,6 +1,6 @@
 #!/bin/bash
 # MIT License
-# Copyright (c) 2020 Jaehyun Shim
+# Copyright (c) 2021 Jaehyun Shim
 
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/

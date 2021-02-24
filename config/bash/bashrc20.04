@@ -1,6 +1,6 @@
 #!/bin/bash
 # MIT License
-# Copyright (c) 2020 Jaehyun Shim
+# Copyright (c) 2021 Jaehyun Shim
 
 # Common commands
 alias gb='gedit ~/.bashrc'
@@ -17,8 +17,8 @@ ROS_VERSION=1
 if [ ${ROS_VERSION} -eq 1 ]; then
   alias cw='cd ~/catkin_ws'
   alias cs='cd ~/catkin_ws/src'
-  alias cm='cd ~/catkin_ws && catkin_make && rospack profile && source ~/.bashrc'
-  alias ct='cd ~/catkin_ws && catkin_make run_tests roslint && rospack profile && source ~/.bashrc'
+  alias cm='cd ~/catkin_ws && catkin_make && rospack profile && source ~/catkin_make/devel/setup.bash'
+  alias ct='cd ~/catkin_ws && catkin_make run_tests roslint && rospack profile && source ~/catkin_make/devel/setup.bash'
   alias ci='cd ~/catkin_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro noetic -r -y'
   alias cr='cd ~/catkin_ws && rm -rf build devel'
   alias pe="env | grep ROS"
@@ -35,7 +35,7 @@ if [ ${ROS_VERSION} -eq 1 ]; then
 elif [ ${ROS_VERSION} -eq 2 ]; then
   alias cw='cd ~/colcon_ws'
   alias cs='cd ~/colcon_ws/src'
-  alias cb='cd ~/colcon_ws && colcon build --symlink-install && source ~/.bashrc'
+  alias cb='cd ~/colcon_ws && colcon build --symlink-install && source ~/colcon_ws/install/local_setup.bash'
   alias ci='cd ~/colcon_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro foxy -r -y'
   alias cr='cd ~/colcon_ws && rm -rf build install log'
   alias pe="env | grep ROS"

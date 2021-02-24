@@ -1,6 +1,6 @@
 # Dotfiles
 
-## Usage (under development)
+## Usage
 ```sh
 $ mkdir $HOME/.dotfiles
 $ sudo apt-get -y install git
