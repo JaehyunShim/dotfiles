@@ -1,4 +1,3 @@
-#!/bin/bash
 # MIT License
 # Copyright (c) 2021 Jaehyun Shim
 
@@ -48,8 +47,9 @@ elif [ ${ROS_VERSION} -eq 2 ]; then
   source /opt/ros/foxy/setup.bash
   source ~/colcon_ws/install/local_setup.bash
 
-  # ROS2 Domain ID
-  export ROS_DOMAIN_ID=1 # Default
+  # ROS2 Domain ID (0 ~ 232)
+  export ROS_DOMAIN_ID=0 # Default
+  #export ROS_DOMAIN_ID=1 # Developer
   #export ROS_DOMAIN_ID=2 # Developer
   #export ROS_DOMAIN_ID=3 # Developer
   #export ROS_DOMAIN_ID=30 # TurtleBot3
