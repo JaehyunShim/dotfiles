@@ -35,6 +35,8 @@ elif [ ${ROS_VERSION} -eq 2 ]; then
   alias cw='cd ~/colcon_ws'
   alias cs='cd ~/colcon_ws/src'
   alias cb='cd ~/colcon_ws && colcon build --symlink-install && source ~/colcon_ws/install/local_setup.bash'
+  alias ct='cd ~/colcon_ws && colcon test'
+  alias ctr='cd ~/colcon_ws && colcon test-result --verbose'
   alias ci='cd ~/colcon_ws && rosdep update && rosdep install --from-paths src --ignore-src --rosdistro foxy -r -y'
   alias cr='cd ~/colcon_ws && rm -rf build install log'
   alias pe="env | grep ROS"
