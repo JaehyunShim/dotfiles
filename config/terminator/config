@@ -19,7 +19,6 @@
   switch_to_tab_8 = <Primary>8
   switch_to_tab_9 = <Primary>9
   switch_to_tab_10 = <Primary>0
-  hide_window = F12
   new_window = <Primary>n
 [profiles]
   [[default]]
