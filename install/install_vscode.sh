@@ -20,3 +20,5 @@ code --install-extension msfukui.eof-mark
 code --install-extension mhutchie.git-graph
 code --install-extension tht13.html-preview-vscode
 code --install-extension tomoki1207.pdf
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension ms-vscode-remote.remote-ssh

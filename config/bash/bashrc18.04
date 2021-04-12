@@ -1,3 +1,4 @@
+#!/bin/bash
 # MIT License
 # Copyright (c) 2021 Jaehyun Shim
 
@@ -23,6 +24,7 @@ if [ ${ROS_VERSION} -eq 1 ]; then
   alias pe="env | grep ROS"
   alias ka='killall -9'
   alias kg='killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient'
+  alias rosreinstall='sudo apt remove ros-melodic-* -y && sudo apt autoremove -y && sudo apt install ros-melodic-desktop-full -y'
   source /opt/ros/melodic/setup.bash
   source ~/catkin_ws/devel/setup.bash
   export ROS_MASTER_URI=http://localhost:11311
@@ -46,6 +48,7 @@ elif [ ${ROS_VERSION} -eq 2 ]; then
   alias kg='killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient'
   alias rt='ros2 topic list'
   alias rn='ros2 node list'
+  alias ros2reinstall='sudo apt remove ros-dashing-* -y && sudo apt autoremove -y && sudo apt install ros-dashing-desktop -y'
   source /opt/ros/dashing/setup.bash
   source ~/colcon_ws/install/local_setup.bash
 

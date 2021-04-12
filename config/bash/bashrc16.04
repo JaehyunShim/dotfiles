@@ -20,6 +20,7 @@ alias cr='cd ~/catkin_ws && rm -rf build devel'
 alias pe='env | grep ROS'
 alias ka='killall -9'
 alias kg='killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient'
+alias rosreinstall='sudo apt remove ros-kinetic-* -y && sudo apt autoremove -y && sudo apt install ros-kinetic-desktop-full -y'
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 export ROS_MASTER_URI=http://localhost:11311
