@@ -22,3 +22,7 @@ code --install-extension tht13.html-preview-vscode
 code --install-extension tomoki1207.pdf
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode-remote.remote-ssh
+code --install-extension coenraads.bracket-pair-colorizer-2
+code --install-extension deitry.colcon-helper
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension felipecaputo.git-project-manager
